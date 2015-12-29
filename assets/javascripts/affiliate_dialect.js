@@ -9,13 +9,11 @@
       text = text.replace(SNAPDEAL_LINK_REGEX, function(href) {
         if (SNAPDEAL_DOMAIN_EXTRACTOR_REGEX.test(href)) {
           var domain = SNAPDEAL_DOMAIN_EXTRACTOR_REGEX.exec(href)[1];
-          if (SNAPDEAL_ASIN_EXTRACTOR_REGEX.test(href)) {
-            var asin = SNAPDEAL_ASIN_EXTRACTOR_REGEX.exec(href)[1];
-            href = "https://www.snapdeal." + domain + "/dp/" + asin;
+       
             if (Discourse.SiteSettings.affiliate_snapdeal_tag.length > 0) {
               href += "?utm_source=aff_prog&utm_campaign=afts&offer_id=17&aff_id=" + Discourse.SiteSettings.affiliate_snapdeal_tag;
             }
-          }
+          
         }
         return href;
       });
