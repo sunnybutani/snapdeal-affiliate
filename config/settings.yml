@@ -1,0 +1,7 @@
+plugins:
+  affiliate_enabled:
+    default: true
+    client: true
+  affiliate_snapdeal_tag:
+    default: ''
+    client: true
